@@ -71,6 +71,8 @@
     <ClInclude Include="DBIndexManager.h" />
     <ClInclude Include="DBPageManager.h" />
     <ClInclude Include="DBPageType.h" />
+    <ClInclude Include="DBRecord.h" />
+    <ClInclude Include="DBRecordModule.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DBError.c" />
@@ -79,7 +81,8 @@
     <ClCompile Include="DBHash.c" />
     <ClCompile Include="DBIndexManager.c" />
     <ClCompile Include="DBPageManager.c" />
-    <ClCompile Include="main.c" />
+    <ClCompile Include="DBRecordModule.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
