@@ -48,15 +48,18 @@
     <ClInclude Include="DBRecordModule.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DBList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DBError.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DBFBuf.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="DBFile.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DBHash.c">
@@ -72,6 +75,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DBFile.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

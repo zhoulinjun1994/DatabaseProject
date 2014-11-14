@@ -69,15 +69,17 @@
     <ClInclude Include="DBFUtility.h" />
     <ClInclude Include="DBHash.h" />
     <ClInclude Include="DBIndexManager.h" />
+    <ClInclude Include="DBList.h" />
     <ClInclude Include="DBPageManager.h" />
     <ClInclude Include="DBPageType.h" />
     <ClInclude Include="DBRecord.h" />
     <ClInclude Include="DBRecordModule.h" />
+    <ClInclude Include="Global.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DBError.c" />
     <ClCompile Include="DBFBuf.c" />
-    <ClCompile Include="DBFile.c" />
+    <ClCompile Include="DBFile.cpp" />
     <ClCompile Include="DBHash.c" />
     <ClCompile Include="DBIndexManager.c" />
     <ClCompile Include="DBPageManager.c" />

@@ -14,7 +14,7 @@ typedef struct
 	//reserved attributes:
 	int objID;
 	int lsn;
-	int slotCnt;
+	int slotCnt;//每个页面记录的最大值
 	int level;
 	int indexID;
 	int freeData;
@@ -24,6 +24,7 @@ typedef struct
 	int xactreserved;
 	int tornBits;
 	int flagBits;
+	int dataLength;//每个记录的长度
 
 }DB_PGHEADER;
 

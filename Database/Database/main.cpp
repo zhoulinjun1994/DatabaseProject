@@ -1,10 +1,11 @@
+
+#include<stdio.h>
+#include <Windows.h>
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
-#include<stdio.h>
-#include <Windows.h>
 #include "DBFile.h"
 #include "DBFBuf.h"
 #include "DBPageManager.h"
@@ -53,7 +54,7 @@ int main()
 	}
 	for(i=0; i<14; i++)
 	{
-		if((error = DBAllocPage(0, &pageid, &buf))!=DB_OK)
+		if((error = DBAllocPage(0, &pageid, (DB_PAGE**)&buf))!=DB_OK)
 		{
 			DBPrintError(error);
 		}
@@ -73,7 +74,7 @@ int main()
 	
 	for(i=0; i<14; i++)
 	{
-		if((error = DBAllocPage(1, &pageid, &buf))!=DB_OK)
+		if((error = DBAllocPage(1, &pageid, (DB_PAGE**)&buf))!=DB_OK)
 		{
 			DBPrintError(error);
 		}

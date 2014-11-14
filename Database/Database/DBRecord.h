@@ -2,6 +2,8 @@
 */
 #ifndef __DBRECORD_H__
 #define __DBRECORD_H__
+#include "DBList.h"
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -14,9 +16,12 @@ private:
 	short RID;
 	char* record;
 public:
+	DB_List next;
+public:
 	DB_Record(int length)
 	{
 		record = new char[length];
+		next = DB_List();
 	}
 	char* getRecord()
 	{

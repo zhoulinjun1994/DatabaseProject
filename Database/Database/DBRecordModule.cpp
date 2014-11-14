@@ -12,33 +12,6 @@ extern "C"
 #include "DBIndexManager.h"
 #include "DBError.h"
 
-void DB_NodeList::Insert(DB_EmptyNode* e)
-{
-	if(head == 0)
-		head = e;
-	else
-	{
-		head->prev = e;
-		e->next = head;
-		head = head -> prev;
-	}
-}
-
-DB_EmptyNode* DB_NodeList::Delete()
-{
-	if(head == 0)
-		return 0;
-	else
-	{
-		DB_EmptyNode* e = head;
-		head = head -> next;
-		if(head != 0)
-			head->prev = 0;
-		e->next = 0;
-		return e;
-	}
-}
-
 void DB_RecordModule::CreateDataFile(char* filename)
 {
 	int error;
