@@ -54,10 +54,11 @@ int main()
 	}
 	for(i=0; i<14; i++)
 	{
-		if((error = DBAllocPage(0, &pageid, (DB_PAGE**)&buf))!=DB_OK)
+		if((error = DBAllocPage(0, &pageid, (DB_PAGE**)&buf, 34))!=DB_OK)
 		{
 			DBPrintError(error);
 		}
+		buf += DB_PGHEADERSIZE;
 		for(j=0; j<DB_PGSIZE; j++)
 			buf[j] = 87;
 		DBPageFix(0, pageid);
@@ -74,10 +75,11 @@ int main()
 	
 	for(i=0; i<14; i++)
 	{
-		if((error = DBAllocPage(1, &pageid, (DB_PAGE**)&buf))!=DB_OK)
+		if((error = DBAllocPage(1, &pageid, (DB_PAGE**)&buf, 34))!=DB_OK)
 		{
 			DBPrintError(error);
 		}
+		buf += DB_PGHEADERSIZE;
 		for(j=0; j<DB_PGSIZE; j++)
 			buf[j] = 89;
 		DBPageFix(1, pageid);
@@ -90,6 +92,18 @@ int main()
 		printf("FileID: 1  Pageid: %d.  File --> Buffer.\n", pageid);
 		ResumeThread(hThread);
 	}	
+
+	DB_Record rrr(6);
+	printf("-------------------------------%d\n",sizeof(rrr));
+	rrr.h.setPage(0);
+	rrr.h.setRID(0);
+	char* test = new char[6];
+	for(int i = 0;i<6;i++)
+		test[i] = 'X';
+	rrr.setRecord(test);
+	DB_RecordModule ccc;
+	ccc.ChangeRecord(0, 0, 0, rrr);
+	ccc.ChangeRecord(0, 0, 1, rrr);
 
 
 	if(SearchIndex("file0_page9", &fileid, &pageid)==IX_OK)

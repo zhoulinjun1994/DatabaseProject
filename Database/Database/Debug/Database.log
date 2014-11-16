@@ -1,10 +1,10 @@
-﻿生成启动时间为 2014/11/14 23:33:18。
+﻿生成启动时间为 2014/11/16 13:49:28。
      1>项目“D:\Programming_in_CPP\Database\Database\Database.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\VS2012\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt DBFBuf.c DBHash.c DBPageManager.c
          DBPageManager.c
-     1>d:\programming_in_cpp\database\database\dbpagemanager.c(134): warning C4101: “i”: 未引用的局部变量
-     1>d:\programming_in_cpp\database\database\dbpagemanager.c(137): warning C4101: “fileheader”: 未引用的局部变量
+     1>d:\programming_in_cpp\database\database\dbpagemanager.c(136): warning C4101: “i”: 未引用的局部变量
+     1>d:\programming_in_cpp\database\database\dbpagemanager.c(139): warning C4101: “fileheader”: 未引用的局部变量
          DBHash.c
          DBFBuf.c
      1>d:\programming_in_cpp\database\database\dbfbuf.c(51): warning C4101: “error”: 未引用的局部变量
@@ -13,48 +13,21 @@
      1>d:\programming_in_cpp\database\database\dbfbuf.c(199): warning C4013: “DBDisposePage”未定义；假设外部返回 int
          正在生成代码...
          D:\VS2012\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DBFile.cpp DBRecordModule.cpp main.cpp
-         DBFile.cpp
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(47): warning C4996: 'open': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _open. See online help for details.
-                 d:\vs2012\vc\include\io.h(315) : 参见“open”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(64): warning C4996: 'write': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _write. See online help for details.
-                 d:\vs2012\vc\include\io.h(321) : 参见“write”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(66): warning C4996: 'close': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _close. See online help for details.
-                 d:\vs2012\vc\include\io.h(305) : 参见“close”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(67): warning C4996: 'unlink': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _unlink. See online help for details.
-                 d:\vs2012\vc\include\stdio.h(285) : 参见“unlink”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(74): warning C4996: 'close': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _close. See online help for details.
-                 d:\vs2012\vc\include\io.h(305) : 参见“close”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(90): warning C4996: 'unlink': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _unlink. See online help for details.
-                 d:\vs2012\vc\include\stdio.h(285) : 参见“unlink”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(108): warning C4996: 'open': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _open. See online help for details.
-                 d:\vs2012\vc\include\io.h(315) : 参见“open”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(114): warning C4996: 'read': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _read. See online help for details.
-                 d:\vs2012\vc\include\io.h(316) : 参见“read”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(119): warning C4996: 'close': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _close. See online help for details.
-                 d:\vs2012\vc\include\io.h(305) : 参见“close”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(128): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         main.cpp
+     1>d:\programming_in_cpp\database\database\dbrecord.h(79): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  d:\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(102): warning C4101: “file”: 未引用的局部变量
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(148): warning C4996: 'lseek': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _lseek. See online help for details.
-                 d:\vs2012\vc\include\io.h(313) : 参见“lseek”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(152): warning C4996: 'write': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _write. See online help for details.
-                 d:\vs2012\vc\include\io.h(321) : 参见“write”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(163): warning C4996: 'close': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _close. See online help for details.
-                 d:\vs2012\vc\include\io.h(305) : 参见“close”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(142): warning C4101: “file”: 未引用的局部变量
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(178): warning C4996: 'lseek': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _lseek. See online help for details.
-                 d:\vs2012\vc\include\io.h(313) : 参见“lseek”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(183): warning C4996: 'read': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _read. See online help for details.
-                 d:\vs2012\vc\include\io.h(316) : 参见“read”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(176): warning C4101: “file”: 未引用的局部变量
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(200): warning C4996: 'lseek': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _lseek. See online help for details.
-                 d:\vs2012\vc\include\io.h(313) : 参见“lseek”的声明
-     1>d:\programming_in_cpp\database\database\dbfile.cpp(205): warning C4996: 'write': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _write. See online help for details.
-                 d:\vs2012\vc\include\io.h(321) : 参见“write”的声明
+     1>d:\programming_in_cpp\database\database\main.cpp(65): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs2012\vc\include\stdio.h(357) : 参见“sprintf”的声明
+     1>d:\programming_in_cpp\database\database\main.cpp(86): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs2012\vc\include\stdio.h(357) : 参见“sprintf”的声明
+     1>d:\programming_in_cpp\database\database\main.cpp(25): warning C4101: “found”: 未引用的局部变量
+     1>d:\programming_in_cpp\database\database\main.cpp(27): warning C4101: “k”: 未引用的局部变量
+         DBRecordModule.cpp
+     1>d:\programming_in_cpp\database\database\dbrecord.h(79): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
          正在生成代码...
          正在跳过...(未检测到相关更改)
-         main.cpp
-         DBRecordModule.cpp
+         DBFile.cpp
        Link:
          D:\VS2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Programming_in_CPP\Database\Debug\Database.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Programming_in_CPP\Database\Debug\Database.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Programming_in_CPP\Database\Debug\Database.lib" /MACHINE:X86 Debug\DBError.obj
          Debug\DBFBuf.obj
@@ -63,10 +36,11 @@
          Debug\DBIndexManager.obj
          Debug\DBPageManager.obj
          Debug\DBRecordModule.obj
+         Debug\global.obj
          Debug\main.obj
          Database.vcxproj -> D:\Programming_in_CPP\Database\Debug\Database.exe
      1>已完成生成项目“D:\Programming_in_CPP\Database\Database\Database.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:32.34
+已用时间 00:00:23.83

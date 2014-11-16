@@ -1,6 +1,8 @@
 #ifndef _DBFUTILITY_
 #define _DBFUTILITY_
 
+#define DB_PGHEADERSIZE     68
+#define DB_RECORDHEADERSIZE 28
 #define DB_PGSIZE			8192
 #define DB_HASH_TAB_SIZE	1000
 #define DB_TIMER_MAX		200
@@ -39,6 +41,7 @@
 #define DB_ERROR_HASH_PAGE_EXIST	-19
 #define DB_ERROR_PAGE_USED			-20
 #define DB_ERROR_DISPOSED			-21
+#define DB_ERROR_RECORD_CANNOT_RENEW -22
 #define BPTI_NOT_FOUND -1;
 #define BPTI_FOUND 0;
 

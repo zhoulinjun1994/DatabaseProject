@@ -1,5 +1,5 @@
-#ifndef __DBRECORD__
-#define __DBRECORD__
+#ifndef __DBRECORDMODULE__
+#define __DBRECORDMODULE__
 #ifdef __cplusplus
 extern "C"
 {
@@ -16,8 +16,8 @@ public:
 	void DeleteDataFile(char* filename);
 	void CloseDataFile(int fileid);
 	void InsertRecord(int fileid, DB_Record rec);
-	void DeleteRecord(int fileid, int page, short RID);
-	void ChangeRecord(int fileid, int page, short RID, DB_Record newrec);
+	void DeleteRecord(int fileid, int page, int RID);
+	int ChangeRecord(int fileid, int page, int RID, DB_Record newrec);
 };
 
 

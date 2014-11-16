@@ -11,6 +11,7 @@ extern "C"
 #include "DBPageManager.h"
 #include "DBIndexManager.h"
 #include "DBError.h"
+#include "Global.h"
 
 void DB_RecordModule::CreateDataFile(char* filename)
 {
@@ -49,17 +50,43 @@ void DB_RecordModule::CloseDataFile(int fileid)
 	}
 }
 
-void InsertRecord(int fileid, DB_Record rec)
+void DB_RecordModule::InsertRecord(int fileid, DB_Record rec)
 {
 	//实现：李国豪
 }
-void DeleteRecord(int fileid, int page, short RID)
+void DB_RecordModule::DeleteRecord(int fileid, int page, int RID)
 {
 	//实现：金嘉宇
 }
-void ChangeRecord(int fileid, int page, short RID, DB_Record newrec)
+int DB_RecordModule::ChangeRecord(int fileid, int page, int RID, DB_Record newrec)
 {
 	//实现: 周琳钧
+	
+	char* buf;
+	int error;
+	if(error = DBGetPage(fileid, page, &buf) != DB_OK)
+	{
+		printf("Error: %d",error);
+		return DB_ERROR_RECORD_CANNOT_RENEW;
+	}
+	else
+	{
+		int dLength = ((DB_PAGE*)(buf - DB_PGHEADERSIZE))->pgheader.dataLength;
+		if(dLength != DB_RECORDHEADERSIZE + newrec.h.getLength())
+		{
+			printf("Error: record length does not match for this file");
+			return DB_ERROR_RECORD_CANNOT_RENEW;
+		}
+		DB_RecordHeader* oldRecordH = (DB_RecordHeader*)::getsubstr(buf, RID * dLength, DB_RECORDHEADERSIZE);
+		newrec.h.setPage(page);
+		newrec.h.setRID(RID);
+		newrec.h.setNextList(oldRecordH->next);
+		char* newRecord = new char[DB_RECORDHEADERSIZE];
+		memcpy(newRecord, &newrec.h, DB_RECORDHEADERSIZE);
+		::exstrcpy(buf, newRecord, RID * dLength, 0, DB_RECORDHEADERSIZE);
+		::exstrcpy(buf, newrec.getRecord(), RID * dLength + DB_RECORDHEADERSIZE, 0, newrec.h.getLength()) ;
+	}
+	return DB_OK;
 }
 
 #ifdef __cplusplus

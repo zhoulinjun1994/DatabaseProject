@@ -84,6 +84,7 @@
     <ClCompile Include="DBIndexManager.c" />
     <ClCompile Include="DBPageManager.c" />
     <ClCompile Include="DBRecordModule.cpp" />
+    <ClCompile Include="global.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

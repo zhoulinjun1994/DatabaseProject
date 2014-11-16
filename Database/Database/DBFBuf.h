@@ -1,3 +1,5 @@
+#ifndef __DB_FBUF__
+#define __DB_FBUF__
 #include <stdio.h>
 #include <Windows.h>
 #include <process.h>
@@ -27,3 +29,4 @@ int BufAlloc(int fileid, int pageid, DB_PAGE** filepage);
 int BufUse(int fileid, int pageid);
 int BufRelease(int fileid, int pageid, BOOL dirty);
 int FileRelease(int fileid);
+#endif

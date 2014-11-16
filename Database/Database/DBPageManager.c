@@ -82,7 +82,7 @@ int DBGetNextPage(int fileid, int pageid, char** buf)
 	return DB_ERROR_EOF;
 }
 
-int DBAllocPage(int fileid, int* pageid, DB_PAGE** page)
+int DBAllocPage(int fileid, int* pageid, DB_PAGE** page, int datalength)
 {
 	int error;
 	int i;
@@ -115,6 +115,8 @@ int DBAllocPage(int fileid, int* pageid, DB_PAGE** page)
 		*pageid = fileheader.pagecnt;
 		if ((error = BufAlloc(fileid, *pageid, page)) != DB_OK)
 			return error;
+		(*page)->pgheader.dataLength = datalength;
+		(*page)->pgheader.slotCnt = DB_PGSIZE / datalength;
 		fileheader.pagecnt++;
 		fileheader.firstfreepage = *pageid;
 		DBUpdateFileHeader(fileid, fileheader, TRUE);

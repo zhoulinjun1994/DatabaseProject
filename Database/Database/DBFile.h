@@ -1,3 +1,10 @@
+#ifndef __DB_FILE__
+#define __DB_FILE__
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 #include <stdio.h>
 #include <io.h>
 #include <stdlib.h>
@@ -7,6 +14,7 @@
 #include "DBFileType.h"
 #include "DBPageType.h"
 #include "DBHash.h"
+
 
 extern int FileRelease(int fileid);
 DB_FILEHEADER DBGetFileHeader(int fileid);
@@ -21,3 +29,8 @@ int DBOpenFile(char* filename);
 int DBCloseFile(int fileid);
 int DBReadFile(int fileid, int pageid, DB_PAGE* bufpage);
 int DBWriteFile(int fileid, int pageid, DB_PAGE* bufpage);
+
+#ifdef __cplusplus
+}
+#endif
+#endif

@@ -25,7 +25,6 @@ typedef struct
 	int tornBits;
 	int flagBits;
 	int dataLength;//每个记录的长度
-
 }DB_PGHEADER;
 
 typedef struct

@@ -9,29 +9,27 @@ extern "C"
 {
 #endif
 
-class DB_Record
+class DB_RecordHeader
 {
 private:
 	int page;
-	short RID;
-	char* record;
+	int RID;
 public:
 	DB_List next;
+private:
+	int length;
 public:
-	DB_Record(int length)
+	DB_RecordHeader()
 	{
-		record = new char[length];
+		length = 0;
 		next = DB_List();
 	}
-	char* getRecord()
+	DB_RecordHeader(int length)
 	{
-		return record;
+		length = length;
+		next = DB_List();
 	}
-	void setRecord(char* rec)
-	{
-		strcpy(this->record, rec);
-	}
-	short getPage()
+	int getPage()
 	{
 		return page;
 	}
@@ -39,13 +37,50 @@ public:
 	{
 		this->page = pg;
 	}
-	short getRID()
+	int getRID()
 	{
 		return RID;
 	}
-	void setRID(short rid)
+	void setRID(int rid)
 	{
 		this->RID = rid;
+	}
+	void setLength(int l)
+	{
+		length = l;
+	}
+	int getLength()
+	{
+		return length;
+	}
+	void setNextList(DB_List d)
+	{
+		next.page = page;
+		next.rid = RID;
+		next.nextpage = d.nextpage;
+		next.nextrid = d.nextrid;
+	}
+};
+
+class DB_Record
+{
+public:
+	DB_RecordHeader h;
+private:
+	char* record;
+public:
+	DB_Record(int length)
+	{
+		record = new char[length];
+		h.setLength(length);
+	}
+	void setRecord(char* buf)
+	{
+		strcpy(record, buf);
+	}
+	char* getRecord()
+	{
+		return record;
 	}
 };
 
